@@ -122,6 +122,16 @@ def path_checks(image, target, points):
     return checks
 
 
+def publication_blocker(case, outside):
+    # 撤离区域中心不是门槛；旧世界标注也不等于独立 SVG 图像控制点。
+    # Extraction centers are not door thresholds; world annotations are not SVG controls.
+    if case['id'] == '5b0fc42d86f7744a585f9105':
+        return 'withheld: independent SVG image-landmark calibration and complete coverage unresolved; extraction-center bounds alone do not prove obsolete geometry'
+    if outside:
+        return 'withheld: coverage requires further validation; no satellite fallback'
+    return None
+
+
 def prepare(assets, upstream, output, version):
     for directory in (assets, upstream):
         for parent in (directory.absolute(), *directory.absolute().parents):
@@ -164,8 +174,9 @@ def prepare(assets, upstream, output, version):
         for floor_id, svg_id in case['floors'].items():
             image = convert(source.read_bytes(), {**b, 'rotation': config['CoordinateRotation']}, target, svg_id, size)
             (base / f'{floor_id}.preview.png').write_bytes(png(image.resize((1024, round(1024 * size[1] / size[0])))))
-        if outside:
-            report['decision'] = 'withheld: source layout does not cover current extraction positions; no satellite fallback'
+        blocker = publication_blocker(case, outside)
+        if blocker:
+            report['decision'] = blocker
             reports.append(report)
             continue
         report['staticMarkerChecks'] = path_checks(image.resize((1024, round(1024 * size[1] / size[0]))), target,

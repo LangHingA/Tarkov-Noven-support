@@ -4,6 +4,9 @@ Audit date: 2026-10-17. Resource packages remain CC BY-NC-SA 4.0, under
 [Noven's permanent free/noncommercial/anti-cheating policy](../PROJECT_POLICY.md).
 Software MIT licenses are not used to authorize artwork.
 
+The [complete-coverage baseline](#complete-coverage-baseline-2026-10-20) below
+records all 17 identities, including subsequent Customs source recovery.
+
 **2026-10-20 correction:** the large extraction-marker differences compare old
 hand-placed points with current extraction-volume centers. They do not prove a
 game-layout revision. The [coordinate investigation](#coordinate-investigation-2026-10-20)
@@ -357,3 +360,135 @@ previous cleanup attempts were rejected before PowerShell ran with
 blocker, not an observed file lock or proof of an ACL denial. No alternate-shell,
 script, Python or other deletion attempt was made to bypass that restriction.
 Exact machine-local retained paths are reported separately, not committed here.
+
+## Complete-coverage review: acceptance protocol (2026-10-20)
+
+This protocol is fixed before selecting any new Lab image transform. It is an
+engineering publication criterion, not an additional upstream license term.
+Existing production resources are preserved; their previous package/renderer
+acceptance is not presented as a new independent geometric survey.
+
+For each of Technical, Base and Second_Level, require at least three
+non-collinear fitting landmarks and three separate holdouts. Identify the same
+physical feature in both observations (e.g. hinge, door-threshold midpoint or
+stair corner), with pinned evidence and a stated picking uncertainty. Points
+must span both image axes and different rooms, not one corridor. A world point
+projected into the SVG using the calibration being tested is not an image
+observation. Two repositories copying one annotation are not independent world
+measurements. Extraction-volume centers, activation boundaries and physical
+entrances remain distinct observations.
+
+Publication requires held-out image-to-world RMSE <= 0.5 world units and maximum
+error <= 1.0 on **each floor**, picking uncertainty <= 0.25 world units, and no
+unexplained local room/passage discrepancy. These tolerances are deliberately
+smaller than typical room dimensions; uncertainty must be reported rather than
+absorbed into a fitted transform. Reject degenerate or spatially clustered
+control sets. Compare fixed legacy calibration, translation, rigid rotation,
+uniform scale, similarity, nonuniform scale and affine fits using the same
+preselected fit/holdout split. Prefer the simplest passing transform; a lower
+training error alone is not acceptance. Do not loosen these thresholds after
+seeing residuals.
+
+All required floors must also have nonblank native previews/detail packs,
+correct height selection and navigation, complete source/license/modification
+records, and deterministic NVR1 bytes. Independent image geometry, world
+annotation consistency, native component tests and user GUI acceptance are
+separate results. If independent feature identities or observations are
+missing, residuals are **not measurable**, not zero; keep publication blocked
+without calling the artwork obsolete.
+
+## Complete-coverage baseline (2026-10-20)
+
+Start application HEAD: `f7138b6de860bcff3add07b541a981010367ec78`, clean.
+Canonical application version 0.1.3; no application/runtime/Core TSV change is
+made in this review. Existing regular/PvE floor contracts match: **66 rows**
+across 16 identities; Tutorial is a seventeenth identity with missing metadata,
+not a map proven to have zero physical floors.
+
+The complete machine-readable [floor matrix](../tools/resources/map_coverage.json)
+records all identities, native floor IDs/order/height rectangles, coordinate
+bounds/rotation, source URL/content hash, known revision or explicitly missing
+game-layout revision, license evidence, development preview/detail presence and
+published package preview/detail coverage. `published` means catalog membership,
+not a new independent geometric certification. Local raster files are not
+treated as cleared SVG sources. Floor-less Tutorial cannot pass vacuously.
+
+| MapCatalog ID | Map | Required native floor IDs | Production |
+| --- | --- | --- | --- |
+| `55f2d3fd4bdc2d5f408b4567` | Factory | Ground_Floor, Second_Floor, Third_Floor, Basement | Preserved |
+| `56f40101d2720b2a4d8b45d6` | Customs | Ground_Level, Second_Floor, Third_Floor, 4th_Floor, Underground_Level | Candidate, unpublished |
+| `5704e3c2d2720bac5b8b4567` | Woods | Ground_Level | Preserved |
+| `5704e4dad2720bb55b8b4567` | Lighthouse | Ground_Level | Preserved |
+| `5704e554d2720bac5b8b456e` | Shoreline | Ground_Level, Second_Floor, Third_Floor, Underground_Level | Preserved |
+| `5704e5fad2720bc05b8b4567` | Reserve | Ground_Level, 2nd_Floor, 3rd_Floor, 4th_Floor, 5th_Floor, Bunkers | Upper geometry missing |
+| `5714dbc024597771384a510d` | Interchange | Ground_Level, First_Floor, Second_Floor | Preserved |
+| `5714dc692459777137212e12` | Streets | Ground_Level, Second_Floor, Third_Floor, Fourth_Floor, Fifth_Floor, Underground_Level | Preserved |
+| `59fc81d786f774390775787e` | Night Factory | Ground_Floor, Second_Floor, Third_Floor, Basement | Preserved |
+| `5b0fc42d86f7744a585f9105` | The Lab | Base, Second_Level, Technical | Independent image calibration unresolved |
+| `653e6760052c01c1c805532f` | Ground Zero | Ground_Level, Second_Floor, Third_Floor, Underground_Level | Preserved |
+| `65b8d6f5cdde2479cb2a3125` | Ground Zero 21+ | Ground_Level, Second_Floor, Third_Floor, Underground_Level | Preserved |
+| `65cc8f81a9aac3e77d0cfd3e` | Terminal | Ground_Level | Preserved |
+| `6733700029c367a3d40b02af` | Labyrinth | Base | Preserved |
+| `68236e8153654e8c1200798a` | Ground Zero Tutorial | Unknown: no native floor/reference records | Core/data-version change required |
+| `69af492a4819ea4ba10a69c5` | Icebreaker | Base, Helipad, Gym_Canteen, Accommodation_lower, Accommodation_mid, Accommodation_upper, Officers_Deck, Stairs_blocked, Bridge, Bridge_Roof, Control_Room, Engine_Room, Engine_Room_upper, Fuel_Pumps_lower, Fuel_Pumps, Storage_Security | 16-slice geometry/rights unresolved |
+| `6a294a5b5eb5f9a1700417b7` | The Lab (Dark) | Base, Second_Level, Technical | Variant geometry unverified |
+
+The eleven production entries cover 33 native floor rows. This is file/floor
+coverage, not a newly measured 33-floor geometry survey. Existing package/source
+hashes and identities are preserved in the matrix. All packages retain their
+original source, license and modification notices. The current layout reference
+is [tarkov-dev `97ff6e7`](https://github.com/the-hideout/tarkov-dev/blob/97ff6e7a43d03c10f3f7a3165c8dbcdf2193d6b9/src/data/maps.json),
+SHA-256 `c53a327dcdcff67a49b9fe2d150731edb4c1611dfc2f75db2ce97444dee2ef77`.
+Its publication date does not identify the exact game build for each floor.
+
+Inventory reproduction (read-only, no extraction/network; use explicit existing
+paths, no new build tree):
+
+```powershell
+python tools/resources/audit_map_coverage.py --assets assets --catalog <signed-manifest.json> --packages <existing-NVR-directory>
+```
+
+This Python inventory is **not a signature verifier or publishing authority**.
+Run the native `NovenResourceChannelTool --verify-remote` separately with the
+trusted public key and approved fixed asset root. The live signed production
+catalog was fetched over HTTPS and retained all eleven entries. Its envelope
+SHA-256 is `38441b9a2794bf61efe68045bf821108b91f8b11614532ef7f331a1246fd773c`.
+The native verifier authenticated the catalog/packages and read **47,032,109
+actual remote body bytes**. Anonymous Asset API 302 responses led only to the
+authorized CDN; CDN responses were 206 with exact Content-Range, including
+4 MiB slices. Every byte matched the signed local package identities. No remote
+catalog, application release or existing resource asset was changed.
+
+### Lab: image observations are not yet paired controls
+
+The pinned SVG has three floor groups and no external/embedded raster images.
+Actual SVG door-shape observations below are measured from vector coordinates,
+not generated by projecting the world annotations. Coordinates are in the
+original 720 by 586 viewBox. `Doors path[n]` is zero-based within that floor's
+Doors group; where one path has multiple rectangular subpaths, the subpath is
+identified explicitly.
+
+| SVG group / native floor | Locator | Observed rectangle center u/v | Missing evidence |
+| --- | --- | --- | --- |
+| Technical_Level / Technical | Doors path[1], red rectangle | 321.6045 / 39.1870 | Physical door identity and independently corroborated world point |
+| Technical_Level / Technical | Doors path[2], first rectangle | 282.4785 / 394.1585 | Same |
+| Technical_Level / Technical | Doors path[0], initial rectangle | 187.9250 / 456.1535 | Same |
+| First_Level / Base | Doors path[4], first rectangle | 301.0460 / 486.1800 | Exact physical threshold/hinge identity; do not infer from proximity alone |
+| First_Level / Base | Doors path[6], rectangle | 112.0460 / 503.1810 | Same |
+| First_Level / Base | Doors path[13], first rectangle | 435.0460 / 324.1810 | Same |
+| Second_Level / Second_Level | Doors path[7], first rectangle | 384.9980 / 101.76615 | Exact physical threshold/hinge identity and independent world counterpart |
+| Second_Level / Second_Level | Doors path[10], rectangle | 211.0000 / 234.7660 | Same |
+| Second_Level / Second_Level | Doors path[17], first rectangle | 303.9980 / 377.7660 | Same |
+
+These are **unidentified/tentative features**, not accepted survey points.
+The existing red/blue/black/manager annotations suggest candidate rooms but do
+not identify a particular vector edge as the same physical object origin.
+Technical especially lacks semantic image IDs. A nearest-door match using the
+old projection would bias the calibration being tested. No floor has the
+required independent paired fit/holdout set, so image residuals for fixed,
+translation, rotation, uniform scale, nonuniform scale and affine models are
+**not measurable from the established evidence**. The earlier 19-point world
+residuals are not reused as image residuals. No final transform or claim of
+obsolete geometry is made. The packaging gate now reports this precise missing
+image evidence rather than treating outside extraction centers as proof of
+missing physical geometry; Lab remains fail-closed and unpublished.

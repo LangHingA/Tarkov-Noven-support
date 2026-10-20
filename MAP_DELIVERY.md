@@ -193,6 +193,8 @@ The Labyrinth SVG extension uses `maps.6733700029c367a3d40b02af`, resource versi
 1.0.0, immutable asset `6733700029c367a3d40b02af-1.0.0.nvr`, GitHub asset ID
 649688513 (398,241 download bytes, 397,931 installed bytes). SHA-256:
 `2ce0f5cb577b8db34d73af6a68796799b33704ef372fa1eeb2188c4c6ec425a3`.
-The old Shebuka Lab SVG remains withheld for current-layout incompatibility,
-not because legitimate companion use lacks permission. Core/update artifacts
+The Shebuka Lab SVG remains withheld because independent SVG image-to-world
+calibration and complete coverage are unresolved. Extraction-area centers outside
+the legacy image bounds do not prove obsolete geometry or prohibit legitimate
+companion use. See docs/MAP_SVG_EXTENSION.md. Core/update artifacts
 are unchanged; original ten resource identities and package bytes are retained.

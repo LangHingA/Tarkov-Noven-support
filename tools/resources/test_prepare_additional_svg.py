@@ -1,5 +1,5 @@
 import unittest
-from prepare_additional_svg import convert, inspect_svg
+from prepare_additional_svg import convert, inspect_svg, publication_blocker
 
 
 class AdditionalSvgTests(unittest.TestCase):
@@ -32,6 +32,14 @@ class AdditionalSvgTests(unittest.TestCase):
             with self.subTest(child=child), self.assertRaises(ValueError):
                 convert(('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">'+child+'</svg>').encode(),
                         self.source, self.target, None, (100, 100))
+
+    def test_lab_gate_requires_independent_image_evidence_not_extract_centers(self):
+        lab = dict(id='5b0fc42d86f7744a585f9105')
+        for centers in ([], [dict(name='Hangar Gate')]):
+            blocker = publication_blocker(lab, centers)
+            self.assertIn('independent SVG image-landmark', blocker)
+            self.assertIn('do not prove obsolete', blocker)
+        self.assertIsNone(publication_blocker(dict(id='6733700029c367a3d40b02af'), []))
 
 
 if __name__ == '__main__':
