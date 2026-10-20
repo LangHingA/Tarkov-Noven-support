@@ -112,3 +112,65 @@ resource CTest 4/4 in each Debug/Release configuration. Full application builds
 and complete CTest were not repeated: only excluded operator tooling and public
 documentation changed. The accepted 0.1.2 application and Setup bytes remain
 unchanged, and the application update channel was not modified.
+
+## 2026-10-20 revalidation / 重新核验
+
+The actual clean source baseline was `c4a1d3c1`, not an older ten-map snapshot.
+The public application release was already 0.1.3 and the production map catalog
+already contained eleven resources, including Labyrinth 1.0.0. This revalidation
+does not replace an existing package, modify either application release or
+publish an incomplete Lab map.
+
+Both upstream repository heads still match the pinned revisions above. Fresh
+HTTPS downloads of both SVGs and their applicable full licenses match the
+recorded SHA-256 values. The last upstream commit affecting `Labs.svg` is
+`61cf07588af345b2606ff7ee0895bfcb2308be72` (2023-10-07); the Labyrinth SVG's
+last edit remains `24cac5e5a1c48d010aaa225d86cba2ef3efda1df`.
+
+All three Lab floor previews render, but that is not sufficient evidence of
+current-layout compatibility. The pinned calibration's old markers compared
+with the unchanged native catalog show a nonuniform discrepancy:
+
+| Landmark | Source x / z | Native x / z | Horizontal difference |
+| --- | --- | --- | --- |
+| Cargo Elevator | -112.152 / -408.64 | -111.79 / -408.55 | about 0.37 world units |
+| Sewage Conduit | -122.889992 / -258.3245 | -122.89 / -258.32 | about 0.005 world units |
+| Hangar Gate | -170.66 / -240.77 | -170.49 / -218.87 | about 21.90 world units |
+| Parking Gate | -231.73 / -434.816376 | -231.46 / -457.77 | about 22.96 world units |
+
+Changing the overall offset or scale to move the gates is not a validated fix
+for the other landmarks. There is no new source geometry or independent
+calibration evidence in these upstream files to justify a local deformation.
+Lab remains withheld for compatibility, **not** for lack of a CC license or
+because legitimate companion-map use requires additional permission.
+
+The existing preparation pipeline was rerun in a temporary directory: Labyrinth
+was byte-identical to the immutable published NVR1, and the Lab guard again
+withheld its two out-of-bounds extraction positions. Generated temporary files
+were removed. Stable IDs, floor order/height selection, renderer and catalog
+coordinates remain unchanged; the relevant native map code/data have no diff
+from the accepted `cdfd3465` 0.1.2 baseline.
+
+The freshly retrieved public catalog has SHA-256
+`38441b9a2794bf61efe68045bf821108b91f8b11614532ef7f331a1246fd773c`.
+Its signed payload/signature match the existing production catalog. Native CNG
+verification and complete anonymous HTTPS byte comparison passed for **all
+eleven packages**, totaling **47,032,109 resource-body bytes**.
+
+Anonymous GitHub API access was rate-limited (403). The existing adapter correctly
+used its restricted fallback to the fixed `maps-v1` release and signed artifact
+basename, followed only the approved CDN 302 and validated exact 206 ranges.
+Labyrinth's paused 65,536-byte prefix survived a new process; an injected
+connection interruption resumed at byte 131,072 with one bounded retry. Native
+install/PvP+PvE floor load/PNG decode/verify/repair/in-use deletion guard/offline
+restart/delete/empty-cache redownload passed. The resumed lifecycle transferred
+1,151,779 body bytes, including catalog/error responses and repeated full
+downloads required by the lifecycle test; the preceding pause run transferred
+76,832 body bytes. These are measured native-client counts, not estimates of
+resource size or total TLS/network overhead.
+
+Focused validation: resource tooling **11/11**, map generator **45/45**, resource
+CTest **7/7 Debug and 7/7 Release**. Only the excluded operator tool was built;
+no application rebuild or full application regression was needed for this
+documentation-only revalidation. No remote files, asset IDs, signatures or
+published versions were changed. User GUI/live-game acceptance remains separate.
