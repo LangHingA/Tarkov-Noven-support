@@ -32,8 +32,10 @@ Labyrinth and Icebreaker tile-fallback imagery has no verified independent
 redistribution grant. A separate acidphantasm Labyrinth SVG is now verified under
 its co-located CC BY-NC-SA 4.0 license; its rotation/bounds are converted to the
 unchanged native projection. The Shebuka Lab SVG has an applicable license but
-does not cover current extraction geometry and remains withheld. See the exact
-[source/hash/coordinate audit](MAP_SVG_EXTENSION.md). Ground Zero Tutorial lacks verified layout metadata.
+independent image calibration/coverage remains unresolved, so it is withheld.
+The extraction-center differences do not themselves prove obsolete geometry;
+see the [coordinate diagnosis](MAP_SVG_EXTENSION.md#coordinate-investigation-2026-10-20) and
+[source/hash audit](MAP_SVG_EXTENSION.md). Ground Zero Tutorial lacks verified layout metadata.
 Their source records remain intact. The same applies independently to satellite
 and handbook/game icons; neither hosting nor a repository software MIT license
 is blanket image permission. These remaining boundaries are not objections to
