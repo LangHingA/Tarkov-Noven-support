@@ -26,8 +26,12 @@ Original cached source PNG sets, satellite imagery and independently licensed
 icons are excluded. `tools/resources/prepare_svg_maps.py` uses the existing NVR1
 packager and refuses incomplete SVG floor coverage or hash/source mismatches.
 
-Customs has a satellite-only fourth floor; Reserve has satellite-only upper
-floors, so neither is published as a complete SVG map. Default Lab/Dark Lab,
+The original Customs configuration has a satellite-only fourth floor. A pinned
+five-floor Shebuka/acidphantasm CC BY-NC-SA 4.0 candidate has since been recovered;
+its independent geometric acceptance remains blocked, not its companion-use
+license. See the [Customs acceptance result](MAP_SVG_EXTENSION.md#customs-acceptance-result-blocked).
+Reserve has satellite-only upper floors; neither is published as a complete SVG
+map. Default Lab/Dark Lab,
 Labyrinth and Icebreaker tile-fallback imagery has no verified independent
 redistribution grant. A separate acidphantasm Labyrinth SVG is now verified under
 its co-located CC BY-NC-SA 4.0 license; its rotation/bounds are converted to the

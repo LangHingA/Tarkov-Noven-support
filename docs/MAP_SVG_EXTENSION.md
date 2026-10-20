@@ -88,7 +88,8 @@ map ID after keyId; production trust, TLS, redirect and hash checks remain intac
 
 ## Deferred maps (no new publication)
 
-* Customs: the current complete floor set still lacks fourth-floor SVG coverage.
+* Customs: the original default SVG lacks fourth-floor coverage. A five-floor
+  candidate was subsequently recovered; see the [Customs acceptance result](#customs-acceptance-result-blocked).
 * Reserve: upper-floor coverage remains missing; do not label a partial set complete.
 * Dark Lab: the upstream default layout shares the Lab map reference, but that does
   not prove current geometry is represented by the old SVG. CC-compliant reuse is
@@ -492,3 +493,185 @@ residuals are not reused as image residuals. No final transform or claim of
 obsolete geometry is made. The packaging gate now reports this precise missing
 image evidence rather than treating outside extraction centers as proof of
 missing physical geometry; Lab remains fail-closed and unpublished.
+
+## Customs final validation protocol (2026-10-20)
+
+This review is limited to Customs `56f40101d2720b2a4d8b45d6`. It preserves the
+existing five-floor candidate and the eleven published map records. No 0.1.3
+application, Core catalog, other unpublished map or existing package is changed.
+
+Before any image-to-world fit, fix the following criteria for **each** of
+Ground_Level, Second_Floor, Third_Floor, 4th_Floor and Underground_Level:
+
+* At least three non-collinear calibration pairs and three separate held-out
+  pairs, distributed across the floor's actual represented geometry. Sparse
+  fourth-floor structures need controls on both buildings, not six points on
+  one edge. Pair explicit door-threshold centers, wall/stair corners or other
+  identified fixed physical features, not a nearest marker chosen by the fit.
+* Each SVG observation needs a reproducible source element/vertex locator and
+  each world observation needs independent provenance identifying the **same
+  physical feature**. Record picking uncertainty <= 0.25 world units. A copied
+  upstream coordinate annotation, source calibration, projection rectangle,
+  extraction-volume center or point projected into the SVG is not an independent
+  image/world pair.
+* Keep control/holdout identities fixed while comparing existing calibration,
+  translation, rigid rotation, uniform scale, similarity, nonuniform scale and
+  affine models. Require per-floor held-out RMSE <= 0.5 world units and maximum
+  error <= 1.0, with no unexplained local wall/door/stair discrepancy. Prefer
+  the simplest passing model, never lower training error alone. Missing pairs
+  mean **not measurable**, not zero error; do not fit or relax thresholds to
+  manufacture acceptance.
+* Floor coverage, attribution, nonblank preview/detail rendering, native package
+  lifecycle and user GUI acceptance remain separate checks. Preserve existing
+  world markers, projection and height selection. License eligibility and a
+  successfully loaded NVR1 do not establish geometric accuracy.
+
+These are engineering release criteria, not additional upstream license terms.
+
+### Customs acceptance result: BLOCKED
+
+Review start: `0438a71c85482bd734583cfe1924128f546792a7`, with the two existing
+Customs tools untracked. They and all retained candidate/test bytes were
+preserved. This result does not alter the earlier Lab investigation or authorize
+any other map. The current production count remains **11/17**, not 12/17.
+
+#### Exact sources and redistribution evidence
+
+Artwork: Shebuka, with supplied modifications by acidphantasm. The five split
+SVGs and combined original are pinned to SPT-DynamicMaps commit
+`4944764f5f6c42d152dca6bd1b5371c4f6212a9e`, under
+[`Plugin/Resources/Maps/Customs_TarkovDev/`](https://github.com/acidphantasm/SPT-DynamicMaps/tree/4944764f5f6c42d152dca6bd1b5371c4f6212a9e/Plugin/Resources/Maps/Customs_TarkovDev).
+The co-located
+[modified-asset license](https://github.com/acidphantasm/SPT-DynamicMaps/blob/4944764f5f6c42d152dca6bd1b5371c4f6212a9e/Plugin/Resources/Maps/Customs_TarkovDev/Layers/Shebuka-LICENSE-MODIFIED%20BY%20ACIDPHANTASM.md)
+is CC BY-NC-SA 4.0; software MIT is not used as the artwork grant. Fresh HTTPS
+retrieval of all five SVGs, the full license and upstream README returned 200
+and matched the retained exact bytes. No independent satellite/image rights
+are inferred. Qualifying redistribution is noncommercial, with original author,
+source/revision/hash, full license, previous modification attribution, Noven's
+affine conversion/rasterization/tiling record and applicable ShareAlike.
+
+| Pinned input | SHA-256 |
+| --- | --- |
+| Customs-Ground_Level.svg | `5be31c29173854f5f832c3fea072bfd8603e27eeca2052754f3798cbf1b6b6d9` |
+| Customs-Second_Floor.svg | `3bb882642f6288b651a7e3a1939bb9f379b8a81de679630fd0259499f7e73e64` |
+| Customs-Third_Floor.svg | `7a5626c748ee4fb45c5b9e9e451691e1811b25ee103da4fc1a1c5b8a3fb4d203` |
+| Customs-Fourth_Floor.svg | `d4bd72d8fd9f5e7f8e7c64f6848863b87c425843aaf058a78d6f256a9dc6cba0` |
+| Customs-Underground_Level.svg | `9d5fe0a3c0bec91dd38fbf045a71548ac5d33df1c46dab4e81ff73931da8567c` |
+| Combined Customs.svg | `40c33a8ac0813af73bad7c5c3c9f3a0c7fc36f9b6e401bf68834b982b2630fe4` |
+| Customs_TarkovDev.jsonc | `6924222ceb18c4752cc8fd17d0a234765b597d3c140a805144e623efcb4206be` |
+| Asset-specific license | `1349a4b6148492b44f629e64eed676612e234fe9a839e4f3b277c1482c8849f1` |
+| Shebuka upstream README | `ee4022e968c052d2920251ba2181b5ebd9ffb45c5c69bdea916bd9f3a6e7031a` |
+
+The README is pinned independently to Shebuka project commit
+`5a8b6115d1c0cf56f2ebaac1a96fa5ae3074d178`. Original calibration JSONC remains
+local; it is referenced by URL/hash but is **not** put in the package under an
+invented artwork license. Each floor carries its original SVG, LICENSE.txt,
+UPSTREAM-README.md and SOURCE.md. The combined SVG and PROVENANCE.json are also
+retained. No embedded raster, external image reference, active SVG content,
+game icon or executable is included.
+
+#### Five-floor contract and observations
+
+Native regular/PvE catalogs agree. Keep their existing order numbers, even
+though their display order is not numerical floor order. Do not renumber them
+or import source height rules to make a geometry check pass.
+
+| Native floor | Existing order | Source groups and physical evidence | Independent accepted fit / holdout pairs | Held-out RMSE / max |
+| --- | --- | --- | --- | --- |
+| Ground_Level | 3 | Ground_Level plus First_Floor companion; terrain/buildings and first-level stairs | 0 / 0 | N/A / N/A |
+| Second_Floor | 0 | Second_Floor, Buildings-2 and Ladders-2; dorms and industrial structures, not a ground-image substitution | 0 / 0 | N/A / N/A |
+| Third_Floor | 2 | Third_Floor, Buildings-3 and Ladders-3; dorms and industrial upper structures | 0 / 0 | N/A / N/A |
+| 4th_Floor | 1 | Fourth_Floor, two building paths, two stair-like rectangles and a gold polygon; source-calibrated oilrig/panda location | 0 / 0 | N/A / N/A |
+| Underground_Level | 4 | Buildings-Under and Ladders-Under; separate bunker/industrial footprints | 0 / 0 | N/A / N/A |
+
+The source calibration has rotation 180, x [-372,698], z [-306,235]. Native
+projection retains rotation 180, x [-372,698], z [-307,237], width 1070, height
+544. Conversion uses each source's actual viewBox (Ground 1062.48 by 535.17;
+other split floors 1062.4827 by 535.174), not a stretched screenshot or an
+invented marker offset. SPT JSONC x/y is the horizontal plane, z is elevation;
+native x/z is horizontal, y is elevation.
+
+For the fourth floor, source-calibrated path alpha bounds at four pixels per
+world unit are [252.25,274.75] x [-79.75,-52.0] and [245.5,266.75] x
+[-40.75,-2.25]. These support the association with the native oilrig/panda
+region x [246,279], z [-79,-1.4], height [11.2,54.7]. Source selection instead
+uses height [9.8,100] and a wider rectangle; native rules remain unchanged.
+This is actual shape/location evidence, not floor-name matching, but it uses
+the source's own calibration and is **not an independent accuracy measurement**.
+
+Reproducible SVG observations are available, but their world counterparts are
+not established. Examples below are first polygon vertices, not presumed
+physical door centers. Locators are relative to the floor SVG; polygon[1] is
+the first polygon in that group.
+
+| Floor | SVG locator | Observed u / v | Independently corroborated matching world x / z |
+| --- | --- | --- | --- |
+| Ground_Level | First_Floor / Ladders-First / polygon[1] | 483.46 / 149.96 | Missing |
+| Second_Floor | Second_Floor / Ladders-2 / polygon[1] | 483.493 / 150.2182 | Missing |
+| Third_Floor | Third_Floor / Ladders-3 / polygon[1] | 521.6044 / 459.9254 | Missing |
+| 4th_Floor | Fourth_Floor / polygon[1] | 421.4615 / 245.6966 | Missing; exact physical meaning of gold shape also unverified |
+| Underground_Level | Underground_Level / Ladders-Under / polygon[1] | 494.6234 / 166.8569 | Missing |
+
+These observations are not a selected training set and do not provide the
+required spatial distribution or holdouts. The inspected source has no
+physical door/room IDs linking these vertices to surveyed world points. Its
+JSONC supplies 34 LockedDoor, one Switch, 25 Extract, four Transit and two
+Secret world annotations, but no measured image/world control table. Reusing
+those through their own calibration would be circular. Native semantic point
+counts, using unchanged height-region selection, are:
+
+* Ground: 21 locks, one switch, 22 extracts, four transits.
+* Second: eight locks; Third: six locks.
+* Fourth: no lock/switch/extract/transit controls.
+* Underground: one lock and five extracts.
+
+These are **marker counts**, not accepted independent landmarks. Locks describe
+object positions without proving which vector edge is their threshold/hinge;
+extracts may describe activation volumes rather than visible entrances. Neither
+counts, nearest-marker matches, floor-region rectangles nor copied map
+annotations establish physical corner coordinates. The searched author sources
+and public layout data did not establish independent world observations for
+the shown image features. No game-memory access, game extraction or automated
+gameplay was attempted.
+
+Therefore all seven transform comparisons remain **unmeasurable**, not failed
+with a numerical residual and not passed with zero. There is no defensible
+per-floor holdout result or local-discrepancy verdict. Required missing evidence
+is at least six semantically identified, spatially distributed image/world
+pairs on each floor, including both fourth-floor buildings, with independent
+world-source revision/measurement context and <= 0.25-unit picking uncertainty.
+No transform was fitted and no correct marker was moved. This is insufficient
+evidence, **not proof that the SVG is wrong or obsolete**.
+
+#### Preserved candidate and test boundaries
+
+Existing internal candidate: `56f40101d2720b2a4d8b45d6-0.0.1.nvr`, 41 entries,
+**2,925,966 downloadable bytes**, **2,923,784 installed bytes**, SHA-256
+`544b925dc1c56d5c9ad040e1e9d70b2511d0b344456de467b0a064936e011905`.
+Its independent repeat package is byte-identical. This is not a signed or
+published production resource and has no GitHub asset ID. Its unsigned local
+catalog is only input to the explicit offline operator tool, never production.
+
+This review re-rendered all five sources in memory and matched every retained
+preview/detail byte for both native image modes. Previews are 1024 by 521,
+details 4096 by 2082; all have nonempty, nonuniform content. Filenames ending
+`.satellite.png` or `.satellite.tiles` carry only new SVG-derived content because
+the unchanged client requires those paths; the name does not authorize raster
+imagery. No regenerated file overwrote retained output.
+
+Focused offline resource tooling tests **30/30 PASS** and map generator tests
+**45/45 PASS**. The prior native local-package run (before this review) passed
+PvP/PvE floor loading, PNG decoding, corrupt verification, repair, offline
+service restart and deletion. That historical result is retained, **not claimed
+as a new GUI, new native lifecycle or remote Customs acceptance run**. This
+review stops at the geometry gate: no new package/install test tree, application
+build, full CTest matrix, remote Customs download or production release is run.
+
+Fresh public `maps/manifest.json` returned HTTP 200, still eleven entries with
+no Customs record. Its envelope equals the preserved production envelope;
+native CNG signature/package verification passed for all eleven local packages
+using `noven-resources-2026`. Public envelope SHA-256 remains
+`38441b9a2794bf61efe68045bf821108b91f8b11614532ef7f331a1246fd773c`.
+No new catalog was signed, no resource was uploaded, and the application
+repository/channel were not pushed or modified. User GUI acceptance remains
+separate and pending.

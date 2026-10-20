@@ -164,8 +164,10 @@ See `docs/MAP_ATTRIBUTION.md` and retained per-source records; they are not gran
 
 Complete SVG-only coverage is available for Factory, Night Factory, Woods,
 Lighthouse, Shoreline, Interchange, Streets, Ground Zero, Ground Zero 21+ and
-Terminal. Customs/Reserve have satellite-only floors and must not be advertised
-as complete SVG maps. Tutorial has no verified layout. Other imagery-only maps
+Terminal. The initial Customs layout has a satellite-only fourth floor; its
+recovered five-floor SVG candidate is still blocked on independent geometry
+acceptance (see docs/MAP_SVG_EXTENSION.md). Reserve has satellite-only upper
+floors. Neither is advertised as a complete published SVG map. Tutorial has no verified layout. Other imagery-only maps
 remain withheld. A separate download has the same redistribution obligations as
 bundled content; synthetic test maps remain segregated from production.
 
