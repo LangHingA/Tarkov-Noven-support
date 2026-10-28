@@ -4,7 +4,7 @@ import struct
 import tempfile
 import unittest
 from pathlib import Path
-from audit_map_coverage import audit, floor_status, package_inventory, rows
+from audit_map_coverage import audit, candidate_inventory, floor_status, package_inventory, rows
 
 
 class CoverageTests(unittest.TestCase):
@@ -74,10 +74,35 @@ class CoverageTests(unittest.TestCase):
             self.assertEqual(first, audit(assets, catalog, assets))
             self.assertEqual(first['floorCount'], 0)
             self.assertFalse(first['maps'][0]['packageFloorCoverage'])
+            self.assertEqual(first['maps'][0]['acceptanceStatus'], 'BLOCKED')
+            self.assertIsNone(first['completionCount'])
             self.assertIn('Core TSVs', first['maps'][0]['nativeContractBlocker'])
             with self.assertRaises(ValueError):
                 catalog_with([dict(stableMapId='unknown', resourceId='maps.unknown')])
                 audit(assets, catalog, assets)
+
+    def test_unsigned_candidate_is_separate_from_publication(self):
+        identity = '68236e8153654e8c1200798a'
+        content, name = b'notice', b'maps/tutorial/SOURCE.md'
+        resource = ('maps.' + identity).encode()
+        raw = b'NVR1' + struct.pack('<I', len(resource)) + resource + struct.pack('<I', 1)
+        raw += struct.pack('<IQ', len(name), len(content)) + name + content
+        with tempfile.TemporaryDirectory(prefix='noven-candidate-audit-') as root:
+            root = Path(root)
+            (root / 'candidate.nvr').write_bytes(raw)
+            record = dict(stableMapId=identity, resourceId=resource.decode(), artifact='candidate.nvr',
+                          downloadSize=len(raw), installedSize=len(content), sha256=hashlib.sha256(raw).hexdigest())
+            catalog = root / 'catalog.json'
+            catalog.write_text(json.dumps(dict(schemaVersion=1, components=[record])))
+            result = candidate_inventory([catalog], {identity})
+            self.assertEqual(result[identity][1], {'maps/tutorial/source.md': 6})
+            for catalogs, ids in (([catalog, catalog], {identity}), ([catalog], {'other'})):
+                with self.assertRaises(ValueError):
+                    candidate_inventory(catalogs, ids)
+            record['artifact'] = '../candidate.nvr'
+            catalog.write_text(json.dumps(dict(schemaVersion=1, components=[record])))
+            with self.assertRaisesRegex(ValueError, 'unsafe candidate artifact'):
+                candidate_inventory([catalog], {identity})
 
 
 if __name__ == '__main__':

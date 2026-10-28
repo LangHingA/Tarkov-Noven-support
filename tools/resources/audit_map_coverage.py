@@ -84,13 +84,34 @@ def floor_status(floor, reference, abstract, entries):
                 geometricSurvey='not independently measured by this inventory')
 
 
-def audit(assets, catalog, packages):
+def candidate_inventory(catalogs, known_ids):
+    """Explicit local, unsigned candidates are never production listings."""
+    result = {}
+    for catalog in catalogs:
+        if catalog.stat().st_size > 256 * 1024:
+            raise ValueError('candidate catalog bound')
+        data = json.loads(catalog.read_bytes())
+        if data.get('schemaVersion') != 1 or len(data.get('components', [])) > 64:
+            raise ValueError('candidate schema/count bound')
+        for record in data['components']:
+            identity = record['stableMapId']
+            if identity not in known_ids or identity in result or record['resourceId'] != 'maps.' + identity:
+                raise ValueError('unknown/duplicate/spoofed candidate')
+            if not re.fullmatch(r'[a-z0-9.-]+\.nvr', record['artifact']):
+                raise ValueError('unsafe candidate artifact')
+            entries, provenance, _ = package_inventory(catalog.parent / record['artifact'], record)
+            result[identity] = record, entries, provenance
+    return result
+
+
+def audit(assets, catalog, packages, candidate_catalogs=()):
     envelope = json.loads(catalog.read_bytes())
     payload = json.loads(bytes.fromhex(envelope['payloadHex']))
     if payload['schemaVersion'] != 1 or payload['audience'] != 'production':
         raise ValueError('wrong catalog domain/schema')
     maps = rows(assets, 'map_maps.tsv')
     ids = {r['id'] for r in maps}
+    candidates = candidate_inventory(candidate_catalogs, ids)
     records = {}
     for record in payload['components']:
         identity = record['stableMapId']
@@ -110,6 +131,7 @@ def audit(assets, catalog, packages):
     for item in maps:
         identity = item['id']
         record = records.get(identity)
+        candidate, candidate_entries, _ = candidates.get(identity, (None, {}, {}))
         entries, provenance, source_hash = package_inventory(packages / record['artifact'], record) if record else ({}, {}, None)
         projection = references.get(identity)
         floor_results = []
@@ -120,6 +142,8 @@ def audit(assets, catalog, packages):
             abstract = metadata.get('abstract') or {}
             raster_urls = (metadata.get('satellite') or {}).get('sourceUrls', [])
             result = floor_status(floor, projection, abstract, entries)
+            result['candidatePreview'] = result['preview'] in candidate_entries
+            result['candidateDetail'] = result['detail'] in candidate_entries
             result['heightRegions'] = [{k: v for k, v in r.items() if k not in ('mapId', 'floorId')}
                                        for r in extents if r['mapId'] == identity and r['floorId'] == floor['floorId']]
             result['developmentPreviewPresent'] = (assets / floor['abstractPath']).is_file()
@@ -148,17 +172,41 @@ def audit(assets, catalog, packages):
         results.append(dict(mapId=identity, resourceId='maps.' + identity, nameEn=item['nameEn'],
                             nameZh=item['nameZh'], projection=projection, published=bool(record),
                             package=record, packageFloorCoverage=complete,
+                            candidatePackage=candidate,
+                            candidatePackageFloorCoverage=bool(projection and floor_results and candidate) and
+                                all(f['candidatePreview'] and f['candidateDetail'] for f in floor_results),
+                            acceptanceStatus='UNVERIFIED' if record else 'BLOCKED',
+                            stages=dict(catalogued=True, productionListed=bool(record),
+                                        packageIntegrityChecked=bool(record or candidate),
+                                        nativeTests='not run by this audit', guiAcceptance='not run by this audit'),
                             nativeContractBlocker=None if projection and floor_results else 'missing projection/floors; resource-only delivery cannot supply Core TSVs',
                             geometryVerdict='not certified by inventory', floors=floor_results))
-    return dict(schemaVersion=1, applicationVersion='0.1.3',
+    version_source = (Path(__file__).resolve().parents[2] / 'CMakeLists.txt').read_text(encoding='utf-8-sig')
+    version = re.search(r'project\(NovenTarkovSupport\s+VERSION\s+([0-9]+\.[0-9]+\.[0-9]+)', version_source)
+    if not version:
+        raise ValueError('canonical application version missing')
+    return dict(schemaVersion=1, applicationVersion=version[1],
                 catalogPayloadSha256=hashlib.sha256(bytes.fromhex(envelope['payloadHex'])).hexdigest(),
                 signatureVerification='external native verifier required; this tool is not a trust authority',
-                mapCount=len(maps), floorCount=len(floors), publishedCount=len(records), maps=results)
+                mapCount=len(maps), floorCount=len(floors), publishedCount=len(records),
+                publishedFloorCount=sum(len(m['floors']) for m in results if m['published']),
+                candidatePackageCount=len(candidates),
+                completionCount=None,
+                completionEvidence='Inventory cannot certify independent geometry or GUI acceptance; publication is a separate stage.',
+                maps=results)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for flag in ('assets', 'catalog', 'packages'):
         parser.add_argument('--' + flag, type=Path, required=True)
+    parser.add_argument('--candidate', type=Path, action='append', default=[],
+                        help='Explicit local candidate catalog; checked separately, never counted as published')
+    parser.add_argument('--output', type=Path, help='Create a NEW JSON report; never overwrite retained evidence')
     args = parser.parse_args()
-    print(json.dumps(audit(args.assets, args.catalog, args.packages), ensure_ascii=False, indent=2))
+    report = json.dumps(audit(args.assets, args.catalog, args.packages, args.candidate), ensure_ascii=False, indent=2) + '\n'
+    if args.output:
+        with args.output.open('x', encoding='utf-8', newline='\n') as stream:
+            stream.write(report)
+    else:
+        print(report, end='')
