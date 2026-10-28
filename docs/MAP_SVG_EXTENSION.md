@@ -1,5 +1,10 @@
 # Lab and Labyrinth SVG compatibility audit
 
+2026-10-28: [17-map recovery audit](../MAP_COVERAGE.md) records the latest
+read-only public catalog check, all six unpublished tracks, new local Lab NVR1
+and partial Reserve previews/detail tiles. Customs' five-floor candidate is
+preserved. Native loading is not independent geometry; nothing new is published.
+
 Audit date: 2026-10-17. Resource packages remain CC BY-NC-SA 4.0, under
 [Noven's permanent free/noncommercial/anti-cheating policy](../PROJECT_POLICY.md).
 Software MIT licenses are not used to authorize artwork.

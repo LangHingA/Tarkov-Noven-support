@@ -6,6 +6,10 @@
   "mapCount": 17,
   "floorCount": 66,
   "publishedCount": 11,
+  "publishedFloorCount": 33,
+  "candidatePackageCount": 2,
+  "completionCount": null,
+  "completionEvidence": "Inventory cannot certify independent geometry or GUI acceptance; publication is a separate stage.",
   "maps": [
     {
       "mapId": "55f2d3fd4bdc2d5f408b4567",
@@ -41,6 +45,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -57,6 +71,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -79,6 +95,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "3",
@@ -110,6 +128,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "6",
@@ -141,6 +161,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-10000",
@@ -182,6 +204,28 @@
       "published": false,
       "package": null,
       "packageFloorCoverage": false,
+      "candidatePackage": {
+        "artifact": "56f40101d2720b2a4d8b45d6-0.0.1.nvr",
+        "downloadSize": 2925966,
+        "installedSize": 2923784,
+        "required": false,
+        "resourceId": "maps.56f40101d2720b2a4d8b45d6",
+        "sha256": "544b925dc1c56d5c9ad040e1e9d70b2511d0b344456de467b0a064936e011905",
+        "stableMapId": "56f40101d2720b2a4d8b45d6",
+        "titleEn": "Customs SVG candidate",
+        "titleZh": "海关 SVG 候选",
+        "type": "map",
+        "version": "0.0.1"
+      },
+      "candidatePackageFloorCoverage": true,
+      "acceptanceStatus": "BLOCKED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": false,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -198,6 +242,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": true,
+          "candidateDetail": true,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -220,6 +266,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": true,
+          "candidateDetail": true,
           "heightRegions": [
             {
               "bottom": "2.7",
@@ -379,6 +427,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": true,
+          "candidateDetail": true,
           "heightRegions": [
             {
               "bottom": "5.7",
@@ -434,6 +484,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": true,
+          "candidateDetail": true,
           "heightRegions": [
             {
               "bottom": "11.2",
@@ -467,6 +519,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": true,
+          "candidateDetail": true,
           "heightRegions": [
             {
               "bottom": "-1000",
@@ -561,6 +615,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -577,6 +641,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -622,6 +688,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -638,6 +714,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -683,6 +761,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -699,6 +787,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -721,6 +811,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-1",
@@ -752,6 +844,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "2",
@@ -783,6 +877,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-1000",
@@ -832,6 +928,16 @@
       "published": false,
       "package": null,
       "packageFloorCoverage": false,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "BLOCKED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": false,
+        "packageIntegrityChecked": false,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -848,6 +954,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -870,6 +978,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "22.1",
@@ -1007,6 +1117,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "25.7",
@@ -1080,6 +1192,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "29.3",
@@ -1137,6 +1251,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "5",
@@ -1170,6 +1286,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-10000",
@@ -1272,6 +1390,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -1288,6 +1416,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -1310,6 +1440,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "25",
@@ -1341,6 +1473,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "34",
@@ -1395,6 +1529,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -1411,6 +1555,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -1433,6 +1579,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "10",
@@ -1464,6 +1612,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "15",
@@ -1495,6 +1645,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "20",
@@ -1526,6 +1678,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "25",
@@ -1557,6 +1711,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-10000",
@@ -1611,6 +1767,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -1627,6 +1793,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -1649,6 +1817,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "3",
@@ -1680,6 +1850,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "6",
@@ -1711,6 +1883,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-10000",
@@ -1752,6 +1926,28 @@
       "published": false,
       "package": null,
       "packageFloorCoverage": false,
+      "candidatePackage": {
+        "artifact": "5b0fc42d86f7744a585f9105-0.0.1.nvr",
+        "downloadSize": 1591243,
+        "installedSize": 1590220,
+        "required": false,
+        "resourceId": "maps.5b0fc42d86f7744a585f9105",
+        "sha256": "dd1ffd112d896083b07ca67910bf5550d91c9c8740f7c6ab2fc7f7f8b7a6fb8e",
+        "stableMapId": "5b0fc42d86f7744a585f9105",
+        "titleEn": "SVG local candidate",
+        "titleZh": "SVG 本地候选",
+        "type": "map",
+        "version": "0.0.1"
+      },
+      "candidatePackageFloorCoverage": true,
+      "acceptanceStatus": "BLOCKED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": false,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -1768,6 +1964,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": true,
+          "candidateDetail": true,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -1792,6 +1990,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": true,
+          "candidateDetail": true,
           "heightRegions": [
             {
               "bottom": "3",
@@ -1825,6 +2025,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": true,
+          "candidateDetail": true,
           "heightRegions": [
             {
               "bottom": "-10000",
@@ -1881,6 +2083,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -1897,6 +2109,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -1919,6 +2133,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "28",
@@ -1958,6 +2174,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "32.3",
@@ -1989,6 +2207,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-1000",
@@ -2051,6 +2271,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -2067,6 +2297,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -2089,6 +2321,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "28",
@@ -2128,6 +2362,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "32.3",
@@ -2159,6 +2395,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-1000",
@@ -2221,6 +2459,16 @@
         "version": "1.0.0"
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -2237,6 +2485,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -2282,6 +2532,16 @@
         "githubAssetId": 649688513
       },
       "packageFloorCoverage": true,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "UNVERIFIED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": true,
+        "packageIntegrityChecked": true,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -2298,6 +2558,8 @@
           "packageCoverage": true,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -2318,6 +2580,16 @@
       "published": false,
       "package": null,
       "packageFloorCoverage": false,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "BLOCKED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": false,
+        "packageIntegrityChecked": false,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": "missing projection/floors; resource-only delivery cannot supply Core TSVs",
       "geometryVerdict": "not certified by inventory",
       "floors": []
@@ -2343,6 +2615,16 @@
       "published": false,
       "package": null,
       "packageFloorCoverage": false,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "BLOCKED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": false,
+        "packageIntegrityChecked": false,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -2359,6 +2641,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -2383,6 +2667,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "19.57",
@@ -2416,6 +2702,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "22.2",
@@ -2449,6 +2737,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "25.3",
@@ -2482,6 +2772,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "28.3",
@@ -2515,6 +2807,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "31.4",
@@ -2548,6 +2842,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "34.5",
@@ -2581,6 +2877,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "37.6",
@@ -2614,6 +2912,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "40.7",
@@ -2647,6 +2947,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "43.8",
@@ -2680,6 +2982,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-10000",
@@ -2713,6 +3017,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "3.6",
@@ -2746,6 +3052,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "5.7",
@@ -2779,6 +3087,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "8.8",
@@ -2812,6 +3122,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "11.9",
@@ -2845,6 +3157,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "15",
@@ -2888,6 +3202,16 @@
       "published": false,
       "package": null,
       "packageFloorCoverage": false,
+      "candidatePackage": null,
+      "candidatePackageFloorCoverage": false,
+      "acceptanceStatus": "BLOCKED",
+      "stages": {
+        "catalogued": true,
+        "productionListed": false,
+        "packageIntegrityChecked": false,
+        "nativeTests": "not run by this audit",
+        "guiAcceptance": "not run by this audit"
+      },
       "nativeContractBlocker": null,
       "geometryVerdict": "not certified by inventory",
       "floors": [
@@ -2904,6 +3228,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [],
           "developmentPreviewPresent": true,
           "developmentDetailPresent": true,
@@ -2928,6 +3254,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "3",
@@ -2961,6 +3289,8 @@
           "packageCoverage": false,
           "coordinateReference": "map_references.tsv",
           "geometricSurvey": "not independently measured by this inventory",
+          "candidatePreview": false,
+          "candidateDetail": false,
           "heightRegions": [
             {
               "bottom": "-10000",

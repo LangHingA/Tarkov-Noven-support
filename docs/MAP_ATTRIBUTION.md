@@ -1,5 +1,13 @@
 # Map attribution evidence / 地图归属证据
 
+2026-10-28: [逐地图补全审计](../MAP_COVERAGE.md) records the newly generated local
+Reserve two-floor and Lab three-floor candidates, their pinned asset-specific
+CC notices, and the independently attributed re3mr Icebreaker research image.
+The latter's 14-panel layout, differing linked CC version and independently
+credited BSG side-view content are not treated as a cleared 16-floor package.
+No new resources are publicly distributed. These findings supplement, not
+replace, the historical attribution evidence below.
+
 ## 2026-10-16 owner policy clarification / 项目政策补充
 
 The owner explicitly commits Noven to free official features, actual noncommercial

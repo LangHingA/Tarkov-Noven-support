@@ -1,5 +1,10 @@
 # Authenticated map delivery
 
+For the current 17-map local production/candidate distinction, six remaining
+blockers and reproducible offline recovery tools, see [MAP_COVERAGE.md](MAP_COVERAGE.md).
+Unsigned local candidate catalogs are explicit operator test inputs, never an
+alternative production trust path. The recovery tools cannot sign or publish.
+
 Starting with installed 0.1.3, the application's separate online startup
 admission policy must succeed before normal features open (see
 [APP_UPDATES.md](APP_UPDATES.md)). Offline resource lifecycle tests below mean
