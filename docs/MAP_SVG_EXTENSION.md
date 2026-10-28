@@ -1,5 +1,11 @@
 # Lab and Labyrinth SVG compatibility audit
 
+2026-10-28 Phase 2: [independent calibration investigation](../MAP_GEOMETRY.md)
+records conflicting declared Lab pixel calibrations, reproducible Technical Rooms
+clipping, source-copy lineage, current API snapshots and actionable per-floor
+acquisition requests. No independent image/world pairs or publication approval
+are inferred from those diagnostics; historical evidence remains below.
+
 2026-10-28: [17-map recovery audit](../MAP_COVERAGE.md) records the latest
 read-only public catalog check, all six unpublished tracks, new local Lab NVR1
 and partial Reserve previews/detail tiles. Customs' five-floor candidate is
