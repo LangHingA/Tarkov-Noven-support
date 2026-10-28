@@ -36,6 +36,7 @@ class CaptureTests(unittest.TestCase):
         names = ['Screenshot.png', '../'+DOCUMENTED_NAME, 'C:\\'+DOCUMENTED_NAME,
                  DOCUMENTED_NAME.replace('[16-20]', '[24-20]'), DOCUMENTED_NAME.replace('01-03', '02-30'),
                  DOCUMENTED_NAME.replace('166.52', 'NaN'), DOCUMENTED_NAME.replace('166.52', '1e999'),
+                 DOCUMENTED_NAME.replace('166.52', '1e-999'),
                  DOCUMENTED_NAME.replace('166.52', '1000001'), DOCUMENTED_NAME.replace(', ', ',\n', 1),
                  DOCUMENTED_NAME.replace('17.87, ', ''), DOCUMENTED_NAME.replace('_0.03673', '_bad'),
                  DOCUMENTED_NAME.replace('.png', '.jpg'), DOCUMENTED_NAME+'junk',

@@ -9,6 +9,7 @@ import os
 import re
 import stat
 import warnings
+from decimal import Decimal
 from pathlib import Path
 
 from PIL import Image
@@ -35,6 +36,8 @@ def parse_filename(name):
     numbers = {k: float(value[k]) for k in ('x', 'y', 'z', 'qx', 'qy', 'qz', 'qw', 'extra')}
     if any(not math.isfinite(n) or abs(n) > 1e6 for n in numbers.values()):
         raise ValueError('nonfinite/excessive filename coordinates')
+    if any(n == 0 and Decimal(value[k]) != 0 for k, n in numbers.items()):
+        raise ValueError('filename number underflows; do not silently change it to zero')
     return dict(originalFilename=name, filenameFormat='eft-underscore-position-quaternion-v1',
                 timestampText=value['date']+'['+value['hour']+'-'+value['minute']+']', timezone='UNKNOWN',
                 worldXYZ=[numbers[a] for a in ('x', 'y', 'z')],
@@ -122,7 +125,7 @@ def pending_measurements(inventory):
                             landmarkName=None, worldSemantic='filename-position-unconfirmed', imageSemantic=None,
                             image=None, imageSha256=None, imageLocator=None, imageSelectionMethod='manual-source-svg',
                             uncertaintyWorld=None, gameVersion=None, mode=None, sessionId=None, evidenceSource=None,
-                            coordinateReferenceEvidence=None, reviewRecord=None,
+                            coordinateReferenceEvidence=None, uncertaintyEvidence=None, reviewer=None, reviewRecord=None,
                             confirmations=dict(nativeOrigin=False, mapAndFloor=False, coordinateReference=False,
                                                samePhysicalEntity=False, independentImagePick=False, independentWorldSource=False)))
     return dict(schemaVersion=1, mapId=None, measurements=records)

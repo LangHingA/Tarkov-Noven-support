@@ -1,5 +1,9 @@
 # Offline geometry evidence tools
 
+For native screenshot inventory, manual pairing and field acquisition, see
+[SCREENSHOT_GEOMETRY.md](../../SCREENSHOT_GEOMETRY.md). It preserves raw XYZ and
+image picks without treating a screenshot position as a wall or an extract center.
+
 These developer-only tools do not change application projections, markers,
 resources, manifests, keys or production channels. They have no network path.
 Use the existing `build/map-tools` Python environment; no new dependency.
