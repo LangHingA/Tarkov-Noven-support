@@ -3,7 +3,7 @@
 正常 Core 安装包不携带可选地图图片/缩放包。资源由独立签名目录管理，仅发布逐包满足许可的素材；以下历史记录不授予其他图片权利。安装包中的来源说明位于 docs/maps，新的 SVG 包自带完整许可/署名和来源账本。
 Normal Core excludes optional map imagery/zoom packs. A separate signed catalog lists only individually cleared resources; historical provenance is not a grant for other images. Core provenance text is under docs/maps; SVG packages carry full licenses, attribution and source inventories.
 
-Noven's [public policy](https://github.com/lingyunalingyun/Noven-Update-Channel/blob/main/PROJECT_POLICY.md) commits all official features to free
+Noven's [public policy](https://github.com/LangHingA/Noven-Update-Channel/blob/main/PROJECT_POLICY.md) commits all official features to free
 access, actual noncommercial use of NC material and no cheating functionality.
 This does not replace independent third-party licenses or make PluginHost an OS
 sandbox. Qualifying Shebuka SVG derivatives use CC BY-NC-SA 4.0 with attribution,
