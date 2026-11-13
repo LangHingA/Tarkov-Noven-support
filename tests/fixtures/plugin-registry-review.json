@@ -7,7 +7,7 @@
       "author": "Noven example",
       "summary": "Non-production fixture for stable-ID matching only.",
       "description": "No package is downloaded. This test record does not enable the locally installed sample plugin.",
-      "source": "https://github.com/lingyunalingyun/Tarkov-Noven-support",
+      "source": "https://github.com/LangHingA/Tarkov-Noven-support",
       "license": "MIT",
       "categories": ["Examples"],
       "tags": ["test-only", "hello"],
