@@ -35,7 +35,7 @@ public:
         const auto found=assets_.find(std::string(url.substr(root_.size())));
         if(!assets_.empty()&&found==assets_.end())Invalid();
         const bool useApi=found!=assets_.end()&&!apiLimited_.load();
-        const auto request=!useApi?std::string(url):"https://api.github.com/repos/lingyunalingyun/Noven-Update-Channel/releases/assets/"+std::to_string(found->second);
+        const auto request=!useApi?std::string(url):"https://api.github.com/repos/LangHingA/Noven-Update-Channel/releases/assets/"+std::to_string(found->second);
         auto response=backend_->Open(request,range,stop);
         // 公共 API 的匿名配额不适合逐块传输；仅确认限流后使用固定标签/签名文件名。
         // On confirmed API quota exhaustion, use the approved release tag/signed basename, never an arbitrary URL.
@@ -89,7 +89,7 @@ bool TrustedGithubAssetRedirect(std::string_view location){
         url->target.find("..") ==url->target.npos&&url->target.substr(0,url->target.find('?')).find('%')==std::string::npos;
 }
 std::shared_ptr<ContentBackend> GithubReleaseBackend(std::string root,std::shared_ptr<ContentBackend> backend,std::span<const ResourceRecord> assets){
-    constexpr std::string_view prefix="https://github.com/lingyunalingyun/Noven-Update-Channel/releases/download/";
+    constexpr std::string_view prefix="https://github.com/LangHingA/Noven-Update-Channel/releases/download/";
     if(!root.starts_with(prefix)||!root.ends_with('/'))Invalid();const auto tag=std::string_view(root).substr(prefix.size(),root.size()-prefix.size()-1);
     if(tag.empty()||tag.size()>80||tag.front()=='.'||tag.find("..")!=tag.npos||tag.find_first_not_of("abcdefghijklmnopqrstuvwxyz0123456789-.")!=tag.npos)Invalid();
     return std::make_shared<GithubBackend>(std::move(root),std::make_shared<RetryBackend>(backend?std::move(backend):WindowsContentBackend(true,true)),assets);
