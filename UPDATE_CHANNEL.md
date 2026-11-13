@@ -1,9 +1,9 @@
 # Stable external beta update channel
 
 This is an explicitly enabled small external beta, not a general launch.
-The approved repository is `lingyunalingyun/Noven-Update-Channel`, branch `main`.
+The approved repository is `LangHingA/Noven-Update-Channel`, branch `main`.
 The fixed HTTPS root is:
-`https://raw.githubusercontent.com/lingyunalingyun/Noven-Update-Channel/main/stable/`.
+`https://raw.githubusercontent.com/LangHingA/Noven-Update-Channel/main/stable/`.
 Default builds remain offline/unconfigured; configure beta builds with
 `cmake -C cmake/NovenStableBeta.cmake ...` in a fresh build directory, or pass
 its three public settings explicitly when reconfiguring an existing directory.

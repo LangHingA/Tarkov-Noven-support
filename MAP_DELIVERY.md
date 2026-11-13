@@ -32,14 +32,14 @@ signatures, bounds and paths fail closed. Optional fields are forward-compatible
 
 ## Fixed hosting policy
 
-Metadata: `https://raw.githubusercontent.com/lingyunalingyun/Noven-Update-Channel/main/maps/`.
+Metadata: `https://raw.githubusercontent.com/LangHingA/Noven-Update-Channel/main/maps/`.
 Approved production assets: fixed repository Releases tag `maps-v1`.
 Original synthetic transport tests use the distinct `phase14-synthetic-v1`
 prerelease and `maps-review/manifest.json`; they never populate production maps.
 
 The Releases adapter maps the authorized basename to its signed asset ID and
 uses the anonymous GitHub Asset API with `Accept: application/octet-stream`.
-Only `/repos/lingyunalingyun/Noven-Update-Channel/releases/assets/<id>` is used
+Only `/repos/LangHingA/Noven-Update-Channel/releases/assets/<id>` is used
 for API resolution. A confirmed anonymous quota response (403 with
 `X-RateLimit-Remaining: 0`, or 429) switches this adapter session to the fixed
 approved repository/tag and signed artifact basename. It does not keep calling

@@ -48,7 +48,7 @@ set(NOVEN_RESOURCE_KEY_ID "" CACHE STRING "Resource signing public-key ID, separ
 set(NOVEN_RESOURCE_PUBLIC_KEY_HEX "" CACHE STRING "Resource CNG P-256 public blob only")
 if(NOVEN_RESOURCE_SOURCE_ROOT)
     string(LENGTH "${NOVEN_RESOURCE_PUBLIC_KEY_HEX}" resource_key_length)
-    if(NOT resource_key_length EQUAL 144 OR NOT NOVEN_RESOURCE_PUBLIC_KEY_HEX MATCHES "^[0-9a-f]+$" OR NOT NOVEN_RESOURCE_KEY_ID MATCHES "^[a-zA-Z0-9._-]+$" OR NOT NOVEN_RESOURCE_SOURCE_ROOT STREQUAL "https://raw.githubusercontent.com/lingyunalingyun/Noven-Update-Channel/main/maps/" OR NOT NOVEN_RESOURCE_ASSET_ROOT STREQUAL "https://github.com/lingyunalingyun/Noven-Update-Channel/releases/download/maps-v1/")
+    if(NOT resource_key_length EQUAL 144 OR NOT NOVEN_RESOURCE_PUBLIC_KEY_HEX MATCHES "^[0-9a-f]+$" OR NOT NOVEN_RESOURCE_KEY_ID MATCHES "^[a-zA-Z0-9._-]+$" OR NOT NOVEN_RESOURCE_SOURCE_ROOT STREQUAL "https://raw.githubusercontent.com/LangHingA/Noven-Update-Channel/main/maps/" OR NOT NOVEN_RESOURCE_ASSET_ROOT STREQUAL "https://github.com/LangHingA/Noven-Update-Channel/releases/download/maps-v1/")
         message(FATAL_ERROR "Resource channel requires fixed approved roots and explicit public trust")
     endif()
 elseif(NOVEN_RESOURCE_ASSET_ROOT OR NOVEN_RESOURCE_KEY_ID OR NOVEN_RESOURCE_PUBLIC_KEY_HEX)

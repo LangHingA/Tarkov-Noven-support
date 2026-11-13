@@ -48,7 +48,7 @@ if(-not $Publish) {Write-Output 'Prepared only; no remote mutation. Reuse the ar
 # 只向批准的通道仓库提交包，绝不推送源码仓库；清单在全部远程范围核验后才发布。
 # Push only the approved channel repository, never source; publish manifest after all remote ranges verify.
 $channel=Join-Path $output 'channel'
-& git clone --branch main https://github.com/lingyunalingyun/Noven-Update-Channel.git $channel
+& git clone --branch main https://github.com/LangHingA/Noven-Update-Channel.git $channel
 if($LASTEXITCODE) {throw 'Channel clone failed.'}
 $stable=Join-Path $channel 'stable'
 New-Item -ItemType Directory -Path $stable -Force | Out-Null
@@ -73,7 +73,7 @@ foreach($pack in $packs) {
 if($LASTEXITCODE) {throw 'Pack commit failed.'}
 & git -C $channel push origin main
 if($LASTEXITCODE) {throw 'Pack publication failed; release.json unchanged.'}
-$root='https://raw.githubusercontent.com/lingyunalingyun/Noven-Update-Channel/main/stable/'
+$root='https://raw.githubusercontent.com/LangHingA/Noven-Update-Channel/main/stable/'
 & $validator --verify-remote $artifacts $public $KeyId $root
 if($LASTEXITCODE) {throw 'Remote pack validation failed; release.json unchanged. Investigate, do not publish manifest.'}
 $archiveName="release-$version.json"

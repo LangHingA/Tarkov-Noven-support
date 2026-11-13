@@ -63,8 +63,8 @@ public:
             !WinHttpSetOption(body->request.value,WINHTTP_OPTION_AUTOLOGON_POLICY,&auth,sizeof(auth))||
             !WinHttpSetOption(body->request.value,WINHTTP_OPTION_MAX_RESPONSE_HEADER_SIZE,&headers,sizeof(headers)))Failed();
         std::wstring requestHeaders=L"Accept-Encoding: identity\r\n";
-        if(resourceTransfer_&&parsed->host=="api.github.com"&&parsed->target.starts_with("/repos/lingyunalingyun/Noven-Update-Channel/releases/assets/"))requestHeaders+=L"Accept: application/octet-stream\r\nCache-Control: no-cache\r\n";
-        if(resourceTransfer_&&parsed->host=="github.com"&&parsed->target.starts_with("/lingyunalingyun/Noven-Update-Channel/releases/download/"))requestHeaders+=L"Cache-Control: no-cache\r\n";
+        if(resourceTransfer_&&parsed->host=="api.github.com"&&parsed->target.starts_with("/repos/LangHingA/Noven-Update-Channel/releases/assets/"))requestHeaders+=L"Accept: application/octet-stream\r\nCache-Control: no-cache\r\n";
+        if(resourceTransfer_&&parsed->host=="github.com"&&parsed->target.starts_with("/LangHingA/Noven-Update-Channel/releases/download/"))requestHeaders+=L"Cache-Control: no-cache\r\n";
         if(range){if(!range->count||range->count>ContentRangeBytes||range->offset>MaximumContentBytes||range->count>MaximumContentBytes-range->offset)Failed();
             requestHeaders+=L"Range: bytes="+std::to_wstring(range->offset)+L"-"+std::to_wstring(range->offset+range->count-1)+L"\r\n";}
         if(!WinHttpSendRequest(body->request.value,requestHeaders.c_str(),static_cast<DWORD>(requestHeaders.size()),WINHTTP_NO_REQUEST_DATA,0,0,0))Failed("send");body->Ready(stop);
